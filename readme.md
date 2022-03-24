@@ -3,9 +3,8 @@
 ***
 ## API DETAILS
 
-***
 ### USER SIGNUP
-> http:localhost:8000/users/create
+> [http://localhost:8000/users/create]
 
 Request Body
 ```js
