@@ -23,14 +23,15 @@ module.exports = function ({ browser_id, user_agent, access_token,wallet}) {
         return errorGenarator(1002, res);
       } else {
         try {
-          let user = await verify(a_token, TOKEN_SECRET);
+          let token = a_token.split(" ")[1]
+          let user = await verify(token, TOKEN_SECRET);
           req.user = user._id;
         } catch (error) {
           return errorGenarator(1003, res);
         }
       }
     }
-    if(wallets){
+    if(wallet){
       let wallet_address = req.headers['wallet-address']
       let wallet_amount = req.headers['wallet-amount']
       if(!wallet_address || !wallet_amount){

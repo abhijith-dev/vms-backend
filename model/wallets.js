@@ -8,6 +8,10 @@ const walletSchema = Schema({
     amount:{
         type:String,
         default:'0.00'
+    },
+    belongsTo:{
+        type:String,
+        required:true
     }
 })
 
