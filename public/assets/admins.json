@@ -1,0 +1,27 @@
+[
+    {
+        "name":"sachin M",
+        "role":"Admin",
+        "passcode":"VMS2022784"
+    },
+    {
+        "name":"ganesh vital",
+        "role":"Manager",
+        "passcode":"VMS2022822"
+    },
+    {
+        "name":"pavan raj ",
+        "role":"Manager",
+        "passcode":"VMS2022101"
+    },
+    {
+        "name":"vamshitha A",
+        "role":"Admin",
+        "passcode":"VMS2022600"
+    },
+    {
+        "name":"vishal kumar mento",
+        "role":"Manager",
+        "passcode":"VMS2022333"
+    }
+]

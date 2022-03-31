@@ -1,6 +1,5 @@
 const { verify } = require("jsonwebtoken");
 const { TOKEN_SECRET } = require("../config/variables");
-const wallets = require("../model/wallets");
 const errorGenarator = require("../utils/errorGenarator");
 
 module.exports = function ({ browser_id, user_agent, access_token,wallet}) {

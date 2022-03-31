@@ -27,6 +27,10 @@ const usersSchema = Schema({
     type: String,
     default: `india`,
   },
+  isDeleted:{
+     type:Boolean,
+     default:false
+  },
   wallet: {
     type: Schema.Types.ObjectId,
     ref: "wallets",

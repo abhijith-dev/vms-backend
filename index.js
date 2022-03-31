@@ -5,6 +5,7 @@ const dotenv = require('dotenv')
 dotenv.config({path:".env"})
 const {PORT} = require('./config/variables')
 const db = require('./config/db')
+const seeder = require('./services/seederServices')
 const log =console.log
 const {
    userRouter
@@ -15,10 +16,14 @@ app.use(express.json())
 
 app.use('/users',userRouter)
 
-app.listen(PORT,(err)=>{
+app.listen(PORT,async(err)=>{
    if(!err){
       log(`server is up :${PORT}`) 
-      db
+      //databse
+      await db
+      .init()
+      //seeder
+      await seeder
       .init()
    }
    else{

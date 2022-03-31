@@ -77,8 +77,42 @@ module.exports = function genarateError(code,res){
             errors.statuscode = 400
             errors.message = `Bad Request`
             errors.errorcode = code
-            return res.status(status).send(errors)     
-
+            return res.status(status).send(errors)  
+        case 1011:
+            status =404
+            errors.exception =`wallet not found for this user`
+            errors.statuscode = 404
+            errors.message = `Not Found`
+            errors.errorcode = code
+            return res.status(status).send(errors) 
+        case 1012:
+            status =400
+            errors.exception =`old password is invalid`
+            errors.statuscode = 400
+            errors.message = `Bad Request`
+            errors.errorcode = code
+            return res.status(status).send(errors)
+        case 1013:
+            status =406
+            errors.exception =`invalid verification code or expired`
+            errors.statuscode = 406
+            errors.message = `Not Acceptable`
+            errors.errorcode = code
+            return res.status(status).send(errors)
+        case 1014:
+            status =503
+            errors.exception =`email templete issue`
+            errors.statuscode = 503
+            errors.message = `Service Unavailable`
+            errors.errorcode = code
+            return res.status(status).send(errors)
+        case 1015:
+            status =503
+            errors.exception =`unable to send email`
+            errors.statuscode = 503
+            errors.message = `Service Unavailable`
+            errors.errorcode = code
+            return res.status(status).send(errors)                                         
         default:
             status =500
             errors.exception = `internal server issue`

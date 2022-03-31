@@ -4,7 +4,7 @@ const log = console.log
 
 module.exports = {
     init : async() =>{
-       connect(DB_URI)
+       await connect(DB_URI)
        .then(sucess=>{
            log(`connected to database :${sucess.connections[0].port}`)
        })
