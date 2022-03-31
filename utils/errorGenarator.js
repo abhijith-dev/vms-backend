@@ -140,7 +140,14 @@ module.exports = function genarateError(code,res){
             errors.statuscode = 404
             errors.message = `Not Found`
             errors.errorcode = code
-            return res.status(status).send(errors)                                                                         
+            return res.status(status).send(errors)
+        case 1020:
+            status =404
+            errors.exception =`no driver found for this id`
+            errors.statuscode = 404
+            errors.message = `Not Found`
+            errors.errorcode = code
+            return res.status(status).send(errors)                                                                                  
         default:
             status =500
             errors.exception = `internal server issue`

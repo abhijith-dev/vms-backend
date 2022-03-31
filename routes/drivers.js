@@ -1,37 +1,43 @@
 const {Router} = require('express')
 const router = Router()
 const requiredAdmin = require('../middlewares/requiredAdmin')
-const vehicleController = require('../controllers/vehicles')
+const driverController = require('../controllers/drivers')
 
 router
 .post(
-    '/bulkcreate',
+    '/create',
     requiredAdmin({admin_token:true,role:true}),
-    vehicleController.bulkCreate
+    driverController.create
 )
 
 .get( 
     '/get/:id',
     requiredAdmin({admin_token:true,role:false}),
-    vehicleController.getSingle   
+    driverController.getSingle   
 )
 
 .get(
     '/getAll',
     requiredAdmin({admin_token:true,role:false}),
-    vehicleController.getAll    
+    driverController.getAll    
 )
 
 .put(
     '/update/:id',
     requiredAdmin({admin_token:true,role:true}),
-    vehicleController.update   
+    driverController.update   
 )
 
 .delete(
     '/delete/:id',
     requiredAdmin({admin_token:true,role:true}),
-    vehicleController.delete 
+    driverController.delete    
+)
+
+.post(
+    '/upload/profile',
+    requiredAdmin({admin_token:true,role:true}),
+    driverController.uploadPicture
 )
 
 module.exports = router

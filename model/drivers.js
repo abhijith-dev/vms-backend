@@ -20,7 +20,7 @@ const driverSchema = Schema({
     },
     picture:{
         type:String,
-        required:true
+        default:null
     },
     experience:{
         type:Number,

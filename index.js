@@ -8,7 +8,7 @@ const db = require('./config/db')
 const seeder = require('./services/seederServices')
 const log =console.log
 const {
-   userRouter, adminRouter, vehicleRouter
+   userRouter, adminRouter, vehicleRouter, driverRouter
 } = require('./routes')
 
 app.use(cors())
@@ -17,6 +17,7 @@ app.use(express.json())
 app.use('/users',userRouter)
 app.use('/admin',adminRouter)
 app.use('/vehicles',vehicleRouter)
+app.use('/drivers',driverRouter)
 
 app.listen(PORT,async(err)=>{
    if(!err){
