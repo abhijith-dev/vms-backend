@@ -112,7 +112,35 @@ module.exports = function genarateError(code,res){
             errors.statuscode = 503
             errors.message = `Service Unavailable`
             errors.errorcode = code
-            return res.status(status).send(errors)                                         
+            return res.status(status).send(errors)     
+        case 1016:
+            status =401
+            errors.exception =`admin-token missing in header`
+            errors.statuscode = 401
+            errors.message = `Unauthorized Request`
+            errors.errorcode = code
+            return res.status(status).send(errors)
+        case 1017:
+            status =401
+            errors.exception =`this role don't have priviladge`
+            errors.statuscode = 503
+            errors.message = `Unauthorized Request`
+            errors.errorcode = code
+            return res.status(status).send(errors) 
+        case 1018:
+            status =401
+            errors.exception =`invalid admin token or expired`
+            errors.statuscode = 401
+            errors.message = `Unauthorized Request`
+            errors.errorcode = code
+            return res.status(status).send(errors) 
+        case 1019:
+            status =404
+            errors.exception =`no vehicle found for this id`
+            errors.statuscode = 404
+            errors.message = `Not Found`
+            errors.errorcode = code
+            return res.status(status).send(errors)                                                                         
         default:
             status =500
             errors.exception = `internal server issue`

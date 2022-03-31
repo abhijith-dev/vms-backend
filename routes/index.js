@@ -1,3 +1,5 @@
 module.exports ={
-    userRouter : require('./users')
+    userRouter : require('./users'),
+    adminRouter :require('./admin'),
+    vehicleRouter:require('./vehicles')
 }
