@@ -147,7 +147,49 @@ module.exports = function genarateError(code,res){
             errors.statuscode = 404
             errors.message = `Not Found`
             errors.errorcode = code
-            return res.status(status).send(errors)                                                                                  
+            return res.status(status).send(errors)
+        case 1021:
+            status =400
+            errors.exception =`error while uploading image`
+            errors.statuscode = 400
+            errors.message = `Bad Request`
+            errors.errorcode = code
+            return res.status(status).send(errors)
+        case 1022:
+            status =400
+            errors.exception =`error while uploading image`
+            errors.statuscode = 400
+            errors.message = `Bad Request`
+            errors.errorcode = code
+            return res.status(status).send(errors)
+        case 1023:
+            status =400
+            errors.exception =`error while updating image URL`
+            errors.statuscode = 400
+            errors.message = `Bad Request`
+            errors.errorcode = code
+            return res.status(status).send(errors)   
+        case 1024:
+            status =400
+            errors.exception =`driver or vehicle already mapped`
+            errors.statuscode = 400
+            errors.message = `Bad Request`
+            errors.errorcode = code
+            return res.status(status).send(errors)  
+        case 1025:
+            status =400
+            errors.exception =`driver or vehicle not yet mapped`
+            errors.statuscode = 400
+            errors.message = `Bad Request`
+            errors.errorcode = code
+            return res.status(status).send(errors)   
+        case 1026:
+            status =400
+            errors.exception =`fuel limit exceeded`
+            errors.statuscode = 400
+            errors.message = `Bad Request`
+            errors.errorcode = code
+            return res.status(status).send(errors)                                                                                                                             
         default:
             status =500
             errors.exception = `internal server issue`

@@ -9,15 +9,27 @@ module.exports ={
         return res.status(201).send()
 
        } catch (error) {
-          return errorGenarator(500,res)
+          return errorGenarator(5000,res)
        }
     },
     getAll: async(req,res)=>{
         try {
-            let vehicles = await vehicleModel.find().populate('drivers')
-            return res.status(200).send(vehicles)
+            let {type} = req.query
+            type = parseInt(type)
+            if(type === 1){
+              let vehicles = await vehicleModel.find().populate('drivers')
+              return res.status(200).send(vehicles)
+            }
+            else if(type === 2){
+              let query ={drivers:null}
+              let vehicles = await vehicleModel.find(query).populate('drivers')
+              return res.status(200).send(vehicles)
+            }
+            else{
+              return errorGenarator(5000,res)
+            }
         } catch (error) {
-            return errorGenarator(500,res)
+            return errorGenarator(5000,res)
         }
     },
     getSingle: async(req,res)=>{
@@ -29,7 +41,7 @@ module.exports ={
             }
            return res.status(200).send(vehicle)  
         } catch (error) {
-            return errorGenarator(500,res)  
+            return errorGenarator(5000,res)  
         }
     },
     update: async(req,res)=>{
@@ -42,7 +54,7 @@ module.exports ={
             }
            return res.status(200).send()  
         } catch (error) {
-            return errorGenarator(500,res)  
+            return errorGenarator(5000,res)  
         }
     },
     delete: async(req,res)=>{
@@ -54,7 +66,7 @@ module.exports ={
             }
            return res.status(200).send() 
         } catch (error) {
-            return errorGenarator(500,res)  
+            return errorGenarator(5000,res)  
         }
     }
 }

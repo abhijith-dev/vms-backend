@@ -39,6 +39,10 @@ const vehilceSchema = Schema({
         type:Number,
         default:0
     },
+    category:{
+        type:String,
+        required:true
+    },
     drivers:{
         type:Schema.Types.ObjectId,
         ref:'drivers'

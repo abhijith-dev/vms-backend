@@ -4,5 +4,7 @@ module.exports ={
     secretManager: require('../model/secretManager'),
     adminModel: require('../model/admin'),
     vehicleModel: require('../model/vehicles'),
-    driverModel:require('../model/drivers')
+    driverModel:require('../model/drivers'),
+    fuelModel:require('./fuel'),
+    reportModel:require('./report')
 }

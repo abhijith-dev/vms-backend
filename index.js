@@ -6,18 +6,23 @@ dotenv.config({path:".env"})
 const {PORT} = require('./config/variables')
 const db = require('./config/db')
 const seeder = require('./services/seederServices')
+const cron = require('./services/cronServices')
 const log =console.log
 const {
-   userRouter, adminRouter, vehicleRouter, driverRouter
+   userRouter, adminRouter, vehicleRouter, driverRouter, mappingRouter, fuelRouter, reportRouter
 } = require('./routes')
 
 app.use(cors())
 app.use(express.json())
+app.use('/static', express.static('public'))
 
 app.use('/users',userRouter)
 app.use('/admin',adminRouter)
 app.use('/vehicles',vehicleRouter)
 app.use('/drivers',driverRouter)
+app.use('/mapping',mappingRouter)
+app.use('/fuels',fuelRouter)
+app.use('/report',reportRouter)
 
 app.listen(PORT,async(err)=>{
    if(!err){
@@ -27,6 +32,9 @@ app.listen(PORT,async(err)=>{
       .init()
       //seeder
       await seeder
+      .init()
+      //cron-job
+      await cron
       .init()
    }
    else{
