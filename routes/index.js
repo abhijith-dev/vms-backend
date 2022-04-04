@@ -6,5 +6,7 @@ module.exports ={
     mappingRouter:require('./driver-vehicle-mapping'),
     fuelRouter:require('./fuel'),
     reportRouter:require('./report'),
-    bookingRouter:require('./booking')
+    bookingRouter:require('./booking'),
+    analyticRouter:require('./analytics'),
+    trackingRouter :require('./tracking')
 }

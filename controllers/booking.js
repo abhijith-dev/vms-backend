@@ -1,4 +1,3 @@
-// const { default: axios } = require("axios")
 const { vehicleModel } = require("../model")
 const errorGenarator = require("../utils/errorGenarator")
 const vehicleAmount = require('../utils/vehicleAmount.js')
