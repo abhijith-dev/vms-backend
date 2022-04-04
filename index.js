@@ -9,7 +9,7 @@ const seeder = require('./services/seederServices')
 const cron = require('./services/cronServices')
 const log =console.log
 const {
-   userRouter, adminRouter, vehicleRouter, driverRouter, mappingRouter, fuelRouter, reportRouter
+   userRouter, adminRouter, vehicleRouter, driverRouter, mappingRouter, fuelRouter, reportRouter,bookingRouter
 } = require('./routes')
 
 app.use(cors())
@@ -23,6 +23,7 @@ app.use('/drivers',driverRouter)
 app.use('/mapping',mappingRouter)
 app.use('/fuels',fuelRouter)
 app.use('/report',reportRouter)
+app.use('/booking',bookingRouter)
 
 app.listen(PORT,async(err)=>{
    if(!err){

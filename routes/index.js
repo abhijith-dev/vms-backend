@@ -5,5 +5,6 @@ module.exports ={
     driverRouter:require('./drivers'),
     mappingRouter:require('./driver-vehicle-mapping'),
     fuelRouter:require('./fuel'),
-    reportRouter:require('./report')
+    reportRouter:require('./report'),
+    bookingRouter:require('./booking')
 }

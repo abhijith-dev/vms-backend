@@ -46,6 +46,10 @@ const vehilceSchema = Schema({
     drivers:{
         type:Schema.Types.ObjectId,
         ref:'drivers'
+    },
+    status:{
+        type:String,
+        default:'Idle'
     }
 
 })

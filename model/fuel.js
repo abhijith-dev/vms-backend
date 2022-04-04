@@ -28,7 +28,7 @@ fuelSchema.post('save',async function(){
        date:date.toDateString(),
        time:date.toTimeString(),
        status:'Expense',
-       amount:data.amount
+       amount:0-data.amount
    })
    await report.save()
 })

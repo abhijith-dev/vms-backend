@@ -6,5 +6,6 @@ module.exports ={
     vehicleModel: require('../model/vehicles'),
     driverModel:require('../model/drivers'),
     fuelModel:require('./fuel'),
-    reportModel:require('./report')
+    reportModel:require('./report'),
+    bookingModel:require('./booking')
 }
