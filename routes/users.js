@@ -64,4 +64,10 @@ router
     requiredAuth({user_agent:true,browser_id:true}),
     userController.resetPasswordExternalVerify
 )
+
+.get(
+   '/all',
+   requiredAdmin({admin_token:true,role:true}),
+   userController.all
+)
 module.exports = router
