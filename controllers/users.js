@@ -273,6 +273,14 @@ module.exports = {
       } catch (error) {
         return errorGenarator(5000,res) 
       }
+  },
+    all:async(req,res)=>{
+    try {
+      let response = await userModel.find()
+      return res.status(200).send(response)
+    } catch (error) {
+      return errorGenarator(5000,res) 
+    }
   }
 };
  
