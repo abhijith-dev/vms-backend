@@ -49,7 +49,7 @@ module.exports ={
          }
          let drivers = await driverModel.findOne(driverQuery)
          let vehicles = await vehicleModel.findOne(vehicleQuery)
-         if(drivers.vehicle===null || vehicles.drivers===null ){
+         if(drivers.vehicle===null && vehicles.drivers===null ){
             return errorGenarator(1025,res) 
          }
          await driverModel.updateOne(driverQuery,driverUpdate)
